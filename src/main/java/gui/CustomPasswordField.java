@@ -1,4 +1,5 @@
 package gui;
+
 import javax.swing.*;
 import java.awt.*;
 import static config.Tokens.*;
@@ -17,8 +18,25 @@ public class CustomPasswordField extends JPasswordField {
         setBackground(DEFAULT_COLOR);
         setBorder(BorderFactory.createLineBorder(Color.GRAY));
         setEditable(true);
+
         setCaretPosition(0);
         setSelectionStart(0);
-        setSelectionEnd(getText().length());
+        setSelectionEnd(getPassword().length);
+
+        getDocument().addDocumentListener(new javax.swing.event.DocumentListener() {
+            public void insertUpdate(javax.swing.event.DocumentEvent e) {
+                updateCaretPosition();
+            }
+            public void removeUpdate(javax.swing.event.DocumentEvent e) {
+                updateCaretPosition();
+            }
+            public void changedUpdate(javax.swing.event.DocumentEvent e) {
+                updateCaretPosition();
+            }
+
+            private void updateCaretPosition() {
+                SwingUtilities.invokeLater(() -> setCaretPosition(getPassword().length));
+            }
+        });
     }
 }

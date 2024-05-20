@@ -1,11 +1,12 @@
 package gui;
+
 import javax.swing.*;
 import javax.swing.border.EmptyBorder;
 import java.awt.*;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import static config.Tokens.*;
 
+import static config.Tokens.*;
 
 public class CustomSecondaryButton {
 
@@ -33,8 +34,6 @@ public class CustomSecondaryButton {
                 button.setBackground(SECONDARY_COLOR);
             }
         });
-
-
         return button;
     }
 }

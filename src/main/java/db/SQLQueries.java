@@ -1,14 +1,16 @@
 package db;
-import java.text.SimpleDateFormat;
-import java.util.ArrayList;
-import java.util.List;
 
 import gui.ActionDialog;
 import org.application.Balance;
 import org.application.Transaction;
 
 import javax.swing.*;
-import java.sql.*;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.UUID;
 
 public class SQLQueries {
@@ -334,8 +336,6 @@ public class SQLQueries {
         } catch (SQLException e) {
             System.out.println("Error retrieving transactions from database: " + e.getMessage());
         }
-
-
         return transactions;
     }
 

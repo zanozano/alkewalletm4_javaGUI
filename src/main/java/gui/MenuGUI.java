@@ -1,16 +1,17 @@
 package gui;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
-import java.sql.Connection;
-import java.sql.SQLException;
-import javax.swing.*;
-import javax.swing.table.DefaultTableModel;
+
 import db.DatabaseConnector;
 import db.SQLQueries;
 import org.application.Balance;
 import org.application.Transaction;
 
+import javax.swing.*;
+import javax.swing.table.DefaultTableModel;
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.SQLException;
 import java.util.List;
 import java.util.Objects;
 
@@ -86,7 +87,6 @@ public class MenuGUI extends JFrame {
 
     }
 
-    //balance listener
     private void showBalanceTable() {
         DefaultTableModel transactionTableModel = (DefaultTableModel) transactionTable.getModel();
         transactionTableModel.setRowCount(0);
@@ -116,7 +116,6 @@ public class MenuGUI extends JFrame {
         }
     }
 
-    //deposit listener
     private class DepositButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -133,7 +132,6 @@ public class MenuGUI extends JFrame {
         }
     }
 
-    //withdraw listener
     private class WithdrawButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -150,7 +148,6 @@ public class MenuGUI extends JFrame {
         }
     }
 
-    //exchange listener
     private class CurrencyExchangeButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             try {
@@ -195,7 +192,6 @@ public class MenuGUI extends JFrame {
         }
     }
 
-    //transaction listener
     private void showTransactionTable() {
         DefaultTableModel balanceTableModel = (DefaultTableModel) balanceTable.getModel();
         balanceTableModel.setRowCount(0);
@@ -237,7 +233,6 @@ public class MenuGUI extends JFrame {
         }
     }
 
-    //logout listener
     private class LogoutButtonListener implements ActionListener {
         public void actionPerformed(ActionEvent e) {
             LogoutConfirmDialog confirmDialog = new LogoutConfirmDialog(MenuGUI.this);

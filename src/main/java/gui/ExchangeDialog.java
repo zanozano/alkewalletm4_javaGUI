@@ -26,7 +26,7 @@ public class ExchangeDialog extends JDialog {
         gbc.gridx = 0;
         gbc.gridy = 1;
         gbc.insets = new Insets(2, 5, 10, 5);
-        currencyComboBox = new JComboBox<>(new String[] {"USD", "EUR", "THB", "CNY"});
+        currencyComboBox = new JComboBox<>(new String[]{"USD", "EUR", "THB", "CNY"});
         add(currencyComboBox, gbc);
 
         gbc.gridx = 0;

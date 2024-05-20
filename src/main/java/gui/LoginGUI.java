@@ -1,4 +1,8 @@
 package gui;
+
+import db.DatabaseConnector;
+import db.SQLQueries;
+
 import javax.swing.*;
 import java.awt.*;
 import java.awt.event.ActionEvent;
@@ -6,9 +10,6 @@ import java.awt.event.ActionListener;
 import java.sql.Connection;
 import java.sql.SQLException;
 import java.util.Objects;
-
-import db.DatabaseConnector;
-import db.SQLQueries;
 
 public class LoginGUI extends JFrame {
 
@@ -31,7 +32,6 @@ public class LoginGUI extends JFrame {
         constraints.fill = GridBagConstraints.HORIZONTAL;
         constraints.insets = new Insets(5, 5, 5, 5);
 
-        // Title
         JLabel titleLabel = new JLabel("Welcome to AlkeWallet!", JLabel.CENTER);
         titleLabel.setFont(new Font("Helvetica", Font.BOLD, 16));
         constraints.gridx = 0;
@@ -40,7 +40,6 @@ public class LoginGUI extends JFrame {
         constraints.insets = new Insets(5, 5, 2, 5);
         panel.add(titleLabel, constraints);
 
-        // Subtitle
         JLabel subtitleLabel = new JLabel("Please log in below", JLabel.CENTER);
         subtitleLabel.setFont(new Font("Helvetica", Font.PLAIN, 14));
         constraints.gridx = 0;
@@ -49,7 +48,6 @@ public class LoginGUI extends JFrame {
         constraints.insets = new Insets(5, 5, 20, 5);
         panel.add(subtitleLabel, constraints);
 
-        // Email label
         JLabel emailLabel = new JLabel("Email");
         constraints.gridx = 0;
         constraints.gridy = 2;
@@ -57,7 +55,6 @@ public class LoginGUI extends JFrame {
         constraints.insets = new Insets(5, 5, 2, 5);
         panel.add(emailLabel, constraints);
 
-        // Email input
         emailTextField = new CustomTextField(15);
         constraints.gridx = 0;
         constraints.gridy = 3;
@@ -65,7 +62,6 @@ public class LoginGUI extends JFrame {
         constraints.insets = new Insets(2, 5, 10, 5);
         panel.add(emailTextField, constraints);
 
-        // Password label
         JLabel passwordLabel = new JLabel("Password");
         constraints.gridx = 0;
         constraints.gridy = 4;
@@ -73,7 +69,6 @@ public class LoginGUI extends JFrame {
         constraints.insets = new Insets(10, 5, 2, 5);
         panel.add(passwordLabel, constraints);
 
-        // Password input
         passwordField = new CustomPasswordField(15);
         constraints.gridx = 0;
         constraints.gridy = 5;
@@ -81,7 +76,6 @@ public class LoginGUI extends JFrame {
         constraints.insets = new Insets(2, 5, 10, 5);
         panel.add(passwordField, constraints);
 
-        // Button
         JButton loginButton = CustomPrimaryButton.createButton("CONFIRM");
         constraints.gridx = 0;
         constraints.gridy = 6;

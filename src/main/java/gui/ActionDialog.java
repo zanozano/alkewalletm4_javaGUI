@@ -52,7 +52,6 @@ public class ActionDialog extends JDialog {
         pack();
         setLocationRelativeTo(parent);
 
-        // Listeners
         cancelButton.addActionListener(_ -> {
             amount = null;
             dispose();
